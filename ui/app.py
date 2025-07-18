@@ -105,12 +105,9 @@ footer {
 
 .button-container {
     display: flex;
-    gap: 8px;
-    align-items: center;
+    align-items: center !important;
     justify-content: center;
-    position: relative;
-    width: 100%;
-    padding: 5px 0;
+    gap: 8px;
 }
 
 .center-item {
@@ -118,6 +115,16 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.button-container .button {
+    margin: 0 !important;
+    padding: 0.5em 1.2em !important; /* or your preferred value */
+    height: 40px !important;         /* set a fixed height for all buttons */
+    line-height: 40px !important;    /* match line-height to height for vertical centering */
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    font-size: 1rem !important;
 }
 """
 
@@ -136,7 +143,7 @@ with gr.Blocks(css=css, theme=gr.themes.Soft(), title="External UI") as demo:
                         <button class="button">Arxiv</button>
                         <button class="button">Project</button>
                         <button class="button">NXN.ai</button>
-                        <button class="button">NXN.ai</button>
+                        <button class="button fix-button-align">NXN.ai</button>
                     </div>
                 </div>
             </div>
